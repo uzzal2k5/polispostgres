@@ -1,8 +1,0 @@
-polisdb:
-  image: polisdb
-  container_name: polisdb
-  hostname: polishdb
-  environment:
-    - POSTGRES_PASSWORD: postgres
-
-
