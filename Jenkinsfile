@@ -5,9 +5,8 @@ node {
 
      }
      stage('Build Image'){
-        docker.withServer('tcp://docker.ipvbd.com:4243','docker-user-credentials'){
-            app = docker.build("uzzal2k5/postgresql")
-        }
+        app = docker.build("uzzal2k5/postgresql")
+
 
      }
      stage('Test Images'){
