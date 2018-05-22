@@ -5,12 +5,16 @@ node {
 
      }
      stage('Build Image'){
-        app = docker.build("uzzal2k5/postgresql")
+        docker.withServer('tcp://docker.ipvbd.com:4243','docker-user-credentials'){
+            app = docker.build("uzzal2k5/postgresql")
+        }
 
      }
      stage('Test Images'){
-        app.inside{
-            sh 'echo "Test Passed"'
+        docker.withServer('tcp://docker.ipvbd.com:4243','docker-user-credentials'){
+            app.inside{
+                sh 'echo "Test Passed"'
+            }
         }
 
      }
