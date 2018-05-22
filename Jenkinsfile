@@ -10,11 +10,10 @@ node {
 
      }
      stage('Test Images'){
-        docker.withServer('tcp://docker.ipvbd.com:4243','docker-user-credentials'){
-            app.inside{
+        pp.inside{
                 sh 'echo "Test Passed"'
             }
-        }
+
 
      }
      stage('Push Images'){
